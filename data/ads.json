@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "type": "image",
+    "bannerUrl": "images/hoodie-sale.jpg",
+    "clickUrl": "https://www.example.com/hoodie-sale",
+    "title": "Hoodie Sale - 50% Off",
+    "position": "top"
+  },
+  {
+    "id": 2,
+    "type": "image",
+    "bannerUrl": "images/hoodie-sale.jpg",
+    "clickUrl": "https://www.example.com/hoodie-sale",
+    "title": "Hoodie Sale - Middle",
+    "position": "middle"
+  },
+  {
+    "id": 3,
+    "type": "image",
+    "bannerUrl": "images/hoodie-sale.jpg",
+    "clickUrl": "https://www.example.com/hoodie-sale",
+    "title": "Hoodie Sale - Bottom",
+    "position": "bottom"
+  }
+]

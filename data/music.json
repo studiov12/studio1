@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "title": "Tere Naal",
+    "artist": "Ali Zafar",
+    "description": "Romantic song with beautiful melody aur dil ko chhoo lene wale lyrics.",
+    "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+    "thumbnail": "https://picsum.photos/seed/music1/400/300",
+    "duration": "3:45",
+    "genre": "Romantic"
+  },
+  {
+    "id": 2,
+    "title": "Rockstar",
+    "artist": "Atif Aslam",
+    "description": "Energetic rock song full of passion aur zabardast beat.",
+    "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+    "thumbnail": "https://picsum.photos/seed/music2/400/300",
+    "duration": "4:12",
+    "genre": "Pop"
+  },
+  {
+    "id": 3,
+    "title": "Dil Diyan Gallan",
+    "artist": "Atif Aslam",
+    "description": "Soulful track with heart-touching lyrics aur pyar bhara message.",
+    "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+    "thumbnail": "https://picsum.photos/seed/music3/400/300",
+    "duration": "3:58",
+    "genre": "Sad"
+  },
+  {
+    "id": 4,
+    "title": "Jhoom",
+    "artist": "Ali Zafar",
+    "description": "Dance number with energetic beats aur zabardast rhythm.",
+    "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+    "thumbnail": "https://picsum.photos/seed/music4/400/300",
+    "duration": "4:05",
+    "genre": "Dance"
+  },
+  {
+    "id": 5,
+    "title": "Tu Hi Tu",
+    "artist": "Aima Baig",
+    "description": "Beautiful romantic song with mesmerizing voice aur shandar composition.",
+    "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+    "thumbnail": "https://picsum.photos/seed/music5/400/300",
+    "duration": "3:30",
+    "genre": "Romantic"
+  },
+  {
+    "id": 6,
+    "title": "Yaariyan",
+    "artist": "Coke Studio",
+    "description": "Friendship song jo dosti ke rishte ko celebrate karta hai.",
+    "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+    "thumbnail": "https://picsum.photos/seed/music6/400/300",
+    "duration": "4:22",
+    "genre": "Pop"
+  },
+  {
+    "id": 7,
+    "title": "Kahani Suno",
+    "artist": "Kaifi Khalil",
+    "description": "Dil ko chhoo lene wala sad song jo aankhon mein aansu la de.",
+    "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+    "thumbnail": "https://picsum.photos/seed/music7/400/300",
+    "duration": "3:15",
+    "genre": "Sad"
+  },
+  {
+    "id": 8,
+    "title": "Nach Punjaban",
+    "artist": "Fariha Pervez",
+    "description": "Bhangra dance number jo shaadiyon mein khoob baja hai.",
+    "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+    "thumbnail": "https://picsum.photos/seed/music8/400/300",
+    "duration": "3:50",
+    "genre": "Dance"
+  },
+  {
+    "id": 9,
+    "title": "Mera Dil Bhi",
+    "artist": "Nusrat Fateh Ali Khan",
+    "description": "Classic qawwali jo aaj bhi logon ke dilon mein zinda hai.",
+    "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
+    "thumbnail": "https://picsum.photos/seed/music9/400/300",
+    "duration": "6:40",
+    "genre": "Sad"
+  },
+  {
+    "id": 10,
+    "title": "Party All Night",
+    "artist": "Faisal Kapadia",
+    "description": "Party anthem jo har function mein wajta hai aur log jhoom uthte hain.",
+    "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
+    "thumbnail": "https://picsum.photos/seed/music10/400/300",
+    "duration": "3:55",
+    "genre": "Dance"
+  }
+]

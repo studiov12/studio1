@@ -1,0 +1,73 @@
+{
+  "brand": {
+    "name": "DMM & Shikra Studio",
+    "shortName": "DMM",
+    "tagline": "News · Music · Life",
+    "logoImage": "images/logo.png"
+  },
+  "owners": [
+    {
+      "id": 1,
+      "name": "Daniyal Malik",
+      "role": "Founder & CEO",
+      "image": "https://picsum.photos/seed/owner1/200/200",
+      "badge": "👑"
+    },
+    {
+      "id": 2,
+      "name": "Muhammad Muneeb",
+      "role": "Co-Founder & Director",
+      "image": "https://picsum.photos/seed/owner2/200/200",
+      "badge": "⭐"
+    },
+    {
+      "id": 3,
+      "name": "Shikra Khan",
+      "role": "Creative Head",
+      "image": "https://picsum.photos/seed/owner3/200/200",
+      "badge": "🎨"
+    }
+  ],
+  "slider": [
+    {
+      "id": 1,
+      "image": "https://picsum.photos/seed/dmm1/1600/600",
+      "tag": "Breaking",
+      "title": "Latest Updates From Around The World",
+      "titleHighlight": "World",
+      "description": "Stay informed with real-time news coverage and exclusive reports from our global team."
+    },
+    {
+      "id": 2,
+      "image": "https://picsum.photos/seed/dmm2/1600/600",
+      "tag": "Music",
+      "title": "Music Festival 2025 Highlights",
+      "titleHighlight": "2025",
+      "description": "Experience the biggest music event of the year with top artists and unforgettable moments."
+    },
+    {
+      "id": 3,
+      "image": "https://picsum.photos/seed/dmm3/1600/600",
+      "tag": "Sports",
+      "title": "Championship Moments",
+      "titleHighlight": "Moments",
+      "description": "Watch the greatest sports highlights and unforgettable victories from around the globe."
+    },
+    {
+      "id": 4,
+      "image": "https://picsum.photos/seed/dmm4/1600/600",
+      "tag": "Tech",
+      "title": "Innovation & Technology",
+      "titleHighlight": "Technology",
+      "description": "Discover the latest tech breakthroughs shaping our future and changing how we live."
+    },
+    {
+      "id": 5,
+      "image": "https://picsum.photos/seed/dmm5/1600/600",
+      "tag": "Entertainment",
+      "title": "Celebrity Buzz & More",
+      "titleHighlight": "Buzz",
+      "description": "Get the inside scoop on entertainment news and celebrity updates that matter."
+    }
+  ]
+}
