@@ -7,7 +7,7 @@
     "id": 1,
     "thumbnail": "https://picsum.photos/seed/music1/400/300",
     "title": "Tere Naal",
-    "videoUrl": "https://youtube.com/shorts/bwPUmhA85sg?si=izBpkIigsvFT99YJ"
+    "videoUrl": "https://youtu.be/UT_8FMWKmQA"
   },
   {
     "artist": "Atif Aslam",
@@ -88,26 +88,6 @@
     "thumbnail": "https://picsum.photos/seed/music10/400/300",
     "title": "Party All Night",
     "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4"
-  },
-  {
-    "artist": "Test Artist",
-    "description": "Yeh sirf ek test hai",
-    "duration": " 3:00",
-    "genre": "Pop",
-    "id": "11",
-    "thumbnail": "",
-    "title": "Mera Test Song",
-    "videoUrl": ""
-  },
-  {
-    "artist": "Ali Zafar",
-    "description": "Romantic song with beautiful melody aur dil ko chhoo lene wale lyrics.",
-    "duration": "3:45",
-    "genre": "Romantic",
-    "id": 1,
-    "thumbnail": "https://picsum.photos/seed/music1/400/300",
-    "title": "testing",
-    "videoUrl": "https://youtube.com/shorts/bwPUmhA85sg?si=izBpkIigsvFT99YJ"
   },
   {
     "artist": "",
