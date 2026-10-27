@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DMM & Shikra Studio - News. Music. Life.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --primary: #2563eb;
+  --secondary: #0ea5e9;
+  --accent: #38bdf8;
+  --bg: #000000;
+  --bg-2: #141414;
+  --card: #181818;
+  --border: rgba(255,255,255,0.08);
+  --text: #ffffff;
+  --text-dim: #a3a3a3;
+  --gradient: linear-gradient(135deg, #2563eb 0%, #0ea5e9 50%, #38bdf8 100%);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Inter',sans-serif; -webkit-tap-highlight-color: transparent; }
+body { background:var(--bg); color:var(--text); min-height:100vh; overflow-x:hidden; }
+a { text-decoration:none; color:inherit; }
+
+/* HEADER */
+.header { position:fixed; top:0; left:0; width:100%; z-index:100; background:linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%); transition: background 0.3s; padding: 15px 0; }
+.header.scrolled { background: #141414; }
+.header-top { display:flex; justify-content:space-between; align-items:center; padding:0 4%; gap:20px; flex-wrap:wrap; }
+.logo { display:flex; align-items:center; gap:10px; cursor:pointer; }
+.logo-img { width:35px; height:35px; object-fit:contain; border-radius:4px; }
+.logo-fallback { width:35px; height:35px; background:var(--gradient); border-radius:4px; display:grid; place-items:center; font-size:14px; font-weight:900; color:#fff; }
+.logo-text { display:flex; flex-direction:column; line-height:1.1; }
+.logo-text .brand-name { font-size:20px; font-weight:800; background:var(--gradient); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; text-transform:uppercase; letter-spacing:1px; }
+
+.search-box { display:flex; background:rgba(0,0,0,0.6); border-radius:4px; overflow:hidden; border:1px solid rgba(255,255,255,0.3); transition:0.3s; max-width:300px; width:100%; }
+.search-box:focus-within { border-color:#fff; background:rgba(0,0,0,0.8); }
+.search-box input { background:transparent; border:none; outline:none; padding:8px 12px; color:#fff; width:100%; font-size:13px; }
+.search-box button { background:transparent; color:#fff; border:none; padding:8px 15px; cursor:pointer; font-weight:600; font-size:13px; }
+.search-box button:hover { color:var(--primary); }
+
+.navbar { display:flex; gap:20px; padding:15px 4% 0; overflow-x:auto; scrollbar-width:none; }
+.navbar::-webkit-scrollbar { display:none; }
+.navbar a { font-size:14px; font-weight:500; color:#e5e5e5; transition:0.3s; white-space:nowrap; padding-bottom:10px; }
+.navbar a:hover { color:#b3b3b3; }
+.navbar a.active { color:#fff; font-weight:700; }
+
+/* HERO SLIDER */
+.hero-slider { position:relative; width:100%; height:85vh; min-height:500px; max-height:800px; background:#000; }
+.slider { display:flex; height:100%; transition:transform 0.8s ease-in-out; }
+.slide { min-width:100%; height:100%; position:relative; }
+.slide img { width:100%; height:100%; object-fit:cover; }
+.slide::after { content:''; position:absolute; inset:0; background:linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0) 100%), linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 30%); }
+.slide-overlay { position:absolute; bottom:25%; left:4%; width:50%; z-index:2; }
+.slide-tag { display:inline-block; padding:4px 10px; background:var(--gradient); border-radius:4px; font-size:12px; font-weight:700; letter-spacing:1px; text-transform:uppercase; margin-bottom:15px; }
+.slide-overlay h2 { font-size:56px; font-weight:900; margin-bottom:15px; line-height:1.1; letter-spacing:-2px; text-shadow:2px 2px 10px rgba(0,0,0,0.5); }
+.slide-overlay h2 span { color: var(--primary); -webkit-text-fill-color: var(--primary); background: none; }
+.slide-overlay p { font-size:18px; color:#fff; max-width:600px; line-height:1.5; margin-bottom:25px; text-shadow:1px 1px 5px rgba(0,0,0,0.5); }
+.slide-cta { display:inline-flex; align-items:center; gap:10px; padding:12px 30px; background:#fff; color:#000; font-weight:700; font-size:16px; border-radius:4px; transition:0.2s; }
+.slide-cta:hover { background:rgba(255,255,255,0.8); }
+
+.slider-btn { position:absolute; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.5); color:#fff; border:none; width:50px; height:50px; border-radius:4px; font-size:24px; cursor:pointer; z-index:10; transition:0.3s; display:grid; place-items:center; opacity:0; }
+.hero-slider:hover .slider-btn { opacity:1; }
+.slider-btn:hover { background:rgba(0,0,0,0.8); }
+.slider-btn.prev { left:20px; }
+.slider-btn.next { right:20px; }
+.slider-dots { position:absolute; bottom:20px; left:50%; transform:translateX(-50%); display:flex; gap:10px; z-index:10; }
+.dot { width:10px; height:10px; border-radius:50%; background:rgba(255,255,255,0.4); cursor:pointer; transition:0.3s; }
+.dot.active { background:#fff; transform:scale(1.2); }
+
+/* LEADERBOARD */
+.owners-section { padding: 20px 4%; margin-top: -80px; position: relative; z-index: 5; }
+.owners-header h2 { font-size: 22px; font-weight: 700; margin-bottom: 15px; color: #e5e5e5; }
+.owners-grid { display: flex; gap: 15px; overflow-x: auto; scrollbar-width: none; padding-bottom: 10px; }
+.owners-grid::-webkit-scrollbar { display: none; }
+.owner-card { flex: 0 0 200px; background: var(--bg-2); border-radius: 6px; padding: 20px 15px; text-align: center; transition: transform 0.3s, background 0.3s; cursor: pointer; position: relative; overflow: hidden; }
+.owner-card:hover { transform: scale(1.05); background: #2a2a2a; z-index: 10; }
+.owner-rank { position: absolute; top: 10px; left: 10px; font-size: 14px; font-weight: 900; color: rgba(255,255,255,0.2); }
+.owner-avatar { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid #333; margin-bottom: 10px; }
+.owner-name { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 3px; }
+.owner-role { font-size: 12px; color: var(--text-dim); }
+
+/* AD BANNER */
+.ad-banner { padding: 10px 4%; text-align: center; }
+.ad-banner img { width: 100%; max-height: 150px; border-radius: 6px; object-fit: cover; cursor: pointer; transition: 0.3s; }
+.ad-banner img:hover { opacity: 0.9; }
+
+/* SECTION & ROW */
+.section { padding: 30px 0 30px 4%; margin: 0; position: relative; }
+.section h2 { font-size: 22px; font-weight: 700; color: #e5e5e5; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+.row-container { position: relative; }
+.grid { display: flex; gap: 10px; overflow-x: auto; scrollbar-width: none; padding: 10px 4% 20px 0; scroll-behavior: smooth; }
+.grid::-webkit-scrollbar { display: none; }
+
+/* CARD (Text Overlap Fixed) */
+.card { flex: 0 0 280px; background: var(--card); border-radius: 6px; overflow: hidden; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s; position: relative; display: flex; flex-direction: column; }
+.card:hover { transform: scale(1.05); z-index: 20; box-shadow: 0 10px 30px rgba(0,0,0,0.8); }
+.card-img-wrap { position: relative; height: 160px; flex-shrink: 0; }
+.card img { width: 100%; height: 100%; object-fit: cover; }
+.card-cat { position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.7); backdrop-filter: blur(4px); padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: 700; color: #fff; z-index: 2; }
+.card-fav { position: absolute; top: 10px; right: 10px; width: 30px; height: 30px; background: rgba(0,0,0,0.7); backdrop-filter: blur(4px); border-radius: 50%; display: grid; place-items: center; font-size: 14px; color: #fff; z-index: 3; border: none; cursor: pointer; transition: 0.2s; }
+.card-fav:hover { background: #fff; color: #000; }
+.card-fav.active { color: var(--primary); }
+.card-body { padding: 15px; display: flex; flex-direction: column; flex-grow: 1; }
+.card-body h3 { font-size: 15px; font-weight: 700; margin-bottom: 5px; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 100%; }
+.card-body p { font-size: 12px; color: var(--text-dim); margin-bottom: 8px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.4; }
+.card-body .meta { font-size: 11px; color: #777; font-weight: 500; margin-top: auto; }
+
+/* VIDEO MODAL */
+.video-modal { position:fixed; inset:0; background:rgba(0,0,0,0.95); display:none; justify-content:center; align-items:center; z-index:999; padding:20px; }
+.video-modal.show { display:flex; }
+.video-box { width:100%; max-width:1100px; aspect-ratio:16/9; background:#000; border-radius:8px; overflow:hidden; position:relative; box-shadow: 0 20px 60px rgba(0,0,0,0.9); }
+.video-box video, .video-box iframe { width:100%; height:100%; display:block; border:none; }
+.close-btn { position:absolute; top:-40px; right:0; width:40px; height:40px; background:#333; border-radius:50%; display:grid; place-items:center; font-size:24px; color:#fff; cursor:pointer; transition:0.3s; border:none; }
+.close-btn:hover { background:#fff; color:#000; }
+
+/* FOOTER */
+.footer { background:#000; margin-top:40px; padding:40px 4% 20px; border-top:1px solid #222; color: #777; }
+.footer-content { display:flex; flex-wrap:wrap; gap:40px; max-width:1200px; margin:0 auto; margin-bottom:30px; }
+.footer-brand { flex: 1; min-width: 200px; }
+.footer-brand h3 { font-size:16px; font-weight:800; color:#fff; margin-bottom:10px; }
+.footer-brand p { font-size:12px; line-height:1.6; }
+.footer-col { flex: 0 0 120px; }
+.footer-col h4 { color:#fff; font-size:13px; font-weight:700; margin-bottom:15px; }
+.footer-col a { display:block; color:#777; margin-bottom:10px; font-size:12px; transition:0.3s; }
+.footer-col a:hover { color:#fff; }
+.footer-bottom { text-align:left; max-width:1200px; margin: 0 auto; padding-top:20px; font-size:11px; color:#555; }
+
+/* TOAST */
+.toast { position:fixed; bottom:30px; left:50%; transform:translateX(-50%) translateY(100px); background:#fff; color:#000; padding:12px 24px; border-radius:4px; font-size:14px; font-weight:600; z-index:9999; opacity:0; transition:0.3s; pointer-events:none; box-shadow:0 5px 20px rgba(0,0,0,0.5); }
+.toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+
+/* MOBILE VIEW */
+@media (max-width: 800px) {
+  .hero-slider { height: 60vh; min-height:400px; }
+  .slide-overlay { width: 80%; bottom: 15%; }
+  .slide-overlay h2 { font-size: 32px; }
+  .slide-overlay p { font-size: 14px; display: none; }
+  .slide-cta { padding: 8px 20px; font-size: 14px; }
+  .slider-btn { display: none; }
+  
+  .owners-section { margin-top: -40px; }
+  .owner-card { flex: 0 0 150px; padding: 15px 10px; }
+  .owner-avatar { width: 60px; height: 60px; }
+  .owner-name { font-size: 13px; }
+  .owner-role { font-size: 10px; }
+  
+  .section { padding: 20px 0 20px 4%; }
+  .section h2 { font-size: 18px; }
+  .card { flex: 0 0 200px; }
+  .card-img-wrap { height: 120px; }
+  .card-body { padding: 10px; }
+  .card-body h3 { font-size: 13px; }
+  .card-body p { display: none; }
+  
+  .footer-content { gap: 20px; }
+  .footer-col { flex: 0 0 100px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header" id="mainHeader">
+  <div class="header-top">
+    <div class="logo" onclick="location.href='index.html'">
+      <img src="images/logo.png" alt="Logo" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+      <div class="logo-fallback" style="display:none;">DMM</div>
+      <div class="logo-text"><span class="brand-name">DMM Studio</span></div>
+    </div>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search titles...">
+      <button id="searchBtn">Search</button>
+    </div>
+  </div>
+  <nav class="navbar">
+    <a href="index.html" class="active">Home</a>
+    <a href="news.html">News</a>
+    <a href="music.html">Music</a>
+    <a href="#">New & Popular</a>
+    <a href="#">My List</a>
+  </nav>
+</header>
+
+<section class="hero-slider">
+  <div class="slider" id="slider"></div>
+  <button class="slider-btn prev" id="prevBtn">‹</button>
+  <button class="slider-btn next" id="nextBtn">›</button>
+  <div class="slider-dots" id="sliderDots"></div>
+</section>
+
+<section class="owners-section">
+  <div class="owners-header">
+    <h2>Meet The Leaders</h2>
+  </div>
+  <div class="owners-grid" id="ownersGrid"></div>
+</section>
+
+<div class="ad-banner" id="top-ad"></div>
+
+<section class="section">
+  <h2>Latest News</h2>
+  <div class="row-container">
+    <div id="home-news" class="grid"></div>
+  </div>
+</section>
+
+<div class="ad-banner" id="middle-ad"></div>
+
+<section class="section">
+  <h2>Trending Music</h2>
+  <div class="row-container">
+    <div id="home-music" class="grid"></div>
+  </div>
+</section>
+
+<div class="ad-banner" id="bottom-ad"></div>
+
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-brand">
+      <h3>DMM & Shikra Studio</h3>
+      <p>Your premium destination for breaking news, trending music, and exclusive videos.</p>
+    </div>
+    <div class="footer-col"><h4>Explore</h4><a href="index.html">Home</a><a href="news.html">News</a><a href="music.html">Music</a></div>
+    <div class="footer-col"><h4>Company</h4><a href="#">About</a><a href="#">Contact</a></div>
+    <div class="footer-col"><h4>Follow</h4><a href="#">Instagram</a><a href="#">YouTube</a></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© <span id="year"></span> <span id="footerBrandName">DMM Studio</span> · All Rights Reserved</p>
+  </div>
+</footer>
+
+<div id="videoModal" class="video-modal">
+  <div class="video-box">
+    <span class="close-btn" id="closeModal">&times;</span>
+    <video id="videoPlayer" controls playsinline preload="metadata" style="display:none;">
+      <source id="videoSource" src="" type="video/mp4">
+    </video>
+    <iframe id="youtubePlayer" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display:none;"></iframe>
+  </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script>
+window.addEventListener('scroll', () => {
+  const header = document.getElementById('mainHeader');
+  if (window.scrollY > 50) header.classList.add('scrolled');
+  else header.classList.remove('scrolled');
+});
+
+const getFavorites = () => JSON.parse(localStorage.getItem('dmm_favorites') || '[]');
+const saveFavorites = (favs) => localStorage.setItem('dmm_favorites', JSON.stringify(favs));
+function toggleFavorite(id) {
+  let favs = getFavorites();
+  if (favs.includes(id)) { favs = favs.filter(f => f !== id); saveFavorites(favs); showToast('❌ Removed from My List'); return false; }
+  else { favs.push(id); saveFavorites(favs); showToast('⭐ Added to My List'); return true; }
+}
+const isFavorite = (id) => getFavorites().includes(id);
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  clearTimeout(window._toastTimer);
+  window._toastTimer = setTimeout(() => t.classList.remove('show'), 2200);
+}
+document.getElementById('year').textContent = new Date().getFullYear();
+
+let SLIDES = [];
+let currentSlide = 0;
+let sliderInterval = null;
+window._allNews = [];
+window._allMusic = [];
+
+async function loadDashboard() {
+  try {
+    const res = await fetch('data/dashboard.json');
+    const data = await res.json();
+    if (data.brand) {
+      document.querySelector('.brand-name').textContent = data.brand.name;
+      document.querySelector('.logo-fallback').textContent = data.brand.shortName;
+      document.querySelector('.footer-brand h3').textContent = data.brand.name;
+      document.getElementById('footerBrandName').textContent = data.brand.name;
+      document.title = data.brand.name + ' - ' + data.brand.tagline;
+    }
+    if (data.leaders && data.leaders.length > 0) {
+      const grid = document.getElementById('ownersGrid');
+      grid.innerHTML = data.leaders.slice(0, 3).map((owner, i) => `
+        <div class="owner-card">
+          <div class="owner-rank">#${i+1}</div>
+          <img src="${owner.image}" class="owner-avatar">
+          <div class="owner-name">${owner.name}</div>
+          <div class="owner-role">${owner.role}</div>
+        </div>
+      `).join('');
+    }
+    if (data.slider && data.slider.length > 0) {
+      SLIDES = data.slider;
+      initSlider();
+    }
+  } catch (e) { console.error(e); }
+}
+
+function initSlider() {
+  const slider = document.getElementById('slider');
+  const dotsBox = document.getElementById('sliderDots');
+  if (!slider || SLIDES.length === 0) return;
+
+  slider.innerHTML = SLIDES.map(s => {
+    let titleHTML = s.title;
+    if (s.titleHighlight && s.title.includes(s.titleHighlight)) {
+      titleHTML = s.title.replace(s.titleHighlight, `<span>${s.titleHighlight}</span>`);
+    }
+    return `
+      <div class="slide">
+        <img src="${s.image}" alt="Slide">
+        <div class="slide-overlay">
+          <span class="slide-tag">${s.tag}</span>
+          <h2>${titleHTML}</h2>
+          <p>${s.description}</p>
+          <a href="#" class="slide-cta" onclick="event.preventDefault();">▶ Watch Now</a>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  dotsBox.innerHTML = SLIDES.map((_, i) => `<span class="dot ${i===0?'active':''}" data-index="${i}"></span>`).join('');
+  dotsBox.querySelectorAll('.dot').forEach(dot => dot.onclick = () => goToSlide(+dot.dataset.index));
+  
+  document.getElementById('prevBtn').onclick = () => goToSlide(currentSlide - 1);
+  document.getElementById('nextBtn').onclick = () => goToSlide(currentSlide + 1);
+
+  clearInterval(sliderInterval);
+  sliderInterval = setInterval(() => goToSlide(currentSlide + 1), 6000);
+}
+
+function goToSlide(index) {
+  const slider = document.getElementById('slider');
+  const dots = document.querySelectorAll('.dot');
+  if (!slider || SLIDES.length === 0) return;
+  currentSlide = (index + SLIDES.length) % SLIDES.length;
+  slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+  dots.forEach((d,i) => d.classList.toggle('active', i === currentSlide));
+  clearInterval(sliderInterval);
+  sliderInterval = setInterval(() => goToSlide(currentSlide + 1), 6000);
+}
+
+async function loadAds() {
+  try {
+    const res = await fetch('data/ads.json');
+    const ads = await res.json();
+    const positions = { 'top-ad':'top', 'middle-ad':'middle', 'bottom-ad':'bottom' };
+    for (const [elemId, pos] of Object.entries(positions)) {
+      const el = document.getElementById(elemId);
+      if (!el) continue;
+      const ad = ads.find(a => a.position === pos);
+      if (!ad) continue;
+      el.innerHTML = `<a href="${ad.clickUrl}" target="_blank"><img src="${ad.bannerUrl}" alt="${ad.title}"></a>`;
+    }
+  } catch (e) { console.error(e); }
+}
+
+function buildNewsCard(n) {
+  return `
+    <div class="card" data-video="${n.videoUrl}" data-poster="${n.thumbnail}">
+      <div class="card-img-wrap">
+        <img src="${n.thumbnail}" alt="News">
+        <span class="card-cat">${n.category}</span>
+        <button class="card-fav ${isFavorite('news_'+n.id)?'active':''}" data-fav-id="news_${n.id}">★</button>
+      </div>
+      <div class="card-body">
+        <h3>${n.title}</h3>
+        <p>${n.description}</p>
+        <div class="meta">📅 <span>${n.date}</span></div>
+      </div>
+    </div>
+  `;
+}
+
+function buildMusicCard(m) {
+  return `
+    <div class="card" data-video="${m.videoUrl}" data-poster="${m.thumbnail}">
+      <div class="card-img-wrap">
+        <img src="${m.thumbnail}" alt="Music">
+        <span class="card-cat">${m.genre}</span>
+        <span class="card-dur" style="position:absolute; bottom:10px; right:10px; background:rgba(0,0,0,0.8); padding:3px 6px; border-radius:4px; font-size:10px; z-index:2;">⏱ ${m.duration}</span>
+        <button class="card-fav ${isFavorite('music_'+m.id)?'active':''}" data-fav-id="music_${m.id}">★</button>
+      </div>
+      <div class="card-body">
+        <h3>🎵 ${m.title}</h3>
+        <p>${m.artist}</p>
+      </div>
+    </div>
+  `;
+}
+
+function attachCardEvents(container) {
+  container.querySelectorAll('.card').forEach(card => {
+    card.onclick = (e) => {
+      if (e.target.closest('.card-fav')) return;
+      openVideoModal(card.dataset.video, card.dataset.poster);
+    };
+    const favBtn = card.querySelector('.card-fav');
+    if (favBtn) {
+      favBtn.onclick = (e) => {
+        e.stopPropagation();
+        const added = toggleFavorite(favBtn.dataset.favId);
+        favBtn.classList.toggle('active', added);
+      };
+    }
+  });
+}
+
+async function loadHomeNews() {
+  const container = document.getElementById('home-news');
+  if (!container) return;
+  try {
+    const res = await fetch('data/news.json');
+    const news = await res.json();
+    window._allNews = news;
+    container.innerHTML = news.slice(0, 8).map(n => buildNewsCard(n)).join('');
+    attachCardEvents(container);
+  } catch (e) { console.error(e); }
+}
+
+async function loadHomeMusic() {
+  const container = document.getElementById('home-music');
+  if (!container) return;
+  try {
+    const res = await fetch('data/music.json');
+    const music = await res.json();
+    window._allMusic = music;
+    container.innerHTML = music.slice(0, 8).map(m => buildMusicCard(m)).join('');
+    attachCardEvents(container);
+  } catch (e) { console.error(e); }
+}
+
+function openVideoModal(url, poster) {
+  if (!url) return;
+  const modal = document.getElementById('videoModal');
+  const videoPlayer = document.getElementById('videoPlayer');
+  const videoSource = document.getElementById('videoSource');
+  const youtubePlayer = document.getElementById('youtubePlayer');
+
+  videoPlayer.style.display = 'none';
+  youtubePlayer.style.display = 'none';
+  youtubePlayer.src = '';
+  videoPlayer.pause();
+
+  if (url.includes('youtube.com') || url.includes('youtu.be')) {
+    let videoId = '';
+    if (url.includes('youtu.be/')) videoId = url.split('youtu.be/')[1].split('?')[0];
+    else if (url.includes('watch?v=')) videoId = url.split('watch?v=')[1].split('&')[0];
+    else if (url.includes('embed/')) videoId = url.split('embed/')[1].split('?')[0];
+    else if (url.includes('shorts/')) videoId = url.split('shorts/')[1].split('?')[0];
+
+    if (videoId) {
+      youtubePlayer.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+      youtubePlayer.style.display = 'block';
+    } else {
+      alert('YouTube link sahi nahi hai.');
+      return;
+    }
+  } else {
+    videoSource.src = url;
+    if (poster) videoPlayer.poster = poster;
+    videoPlayer.load();
+    videoPlayer.style.display = 'block';
+    videoPlayer.play().catch(() => {});
+  }
+
+  modal.classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeVideoModal() {
+  const modal = document.getElementById('videoModal');
+  const videoPlayer = document.getElementById('videoPlayer');
+  const youtubePlayer = document.getElementById('youtubePlayer');
+  modal.classList.remove('show');
+  videoPlayer.pause();
+  videoPlayer.currentTime = 0;
+  youtubePlayer.src = '';
+  document.body.style.overflow = '';
+}
+
+function initSearch() {
+  const input = document.getElementById('searchInput');
+  const btn = document.getElementById('searchBtn');
+  if (!input || !btn) return;
+
+  const doSearch = () => {
+    const query = input.value.trim().toLowerCase();
+    const newsContainer = document.getElementById('home-news');
+    const musicContainer = document.getElementById('home-music');
+
+    if (!query) { loadHomeNews(); loadHomeMusic(); return; }
+
+    const filteredNews = (window._allNews || []).filter(n =>
+      (n.title + ' ' + n.description + ' ' + n.category).toLowerCase().includes(query)
+    );
+    const filteredMusic = (window._allMusic || []).filter(m =>
+      (m.title + ' ' + m.description + ' ' + m.artist + ' ' + m.genre).toLowerCase().includes(query)
+    );
+
+    newsContainer.innerHTML = filteredNews.length ? filteredNews.map(n => buildNewsCard(n)).join('') : '<p style="color:#777;padding:20px;">No news matched.</p>';
+    musicContainer.innerHTML = filteredMusic.length ? filteredMusic.map(m => buildMusicCard(m)).join('') : '<p style="color:#777;padding:20px;">No music matched.</p>';
+    attachCardEvents(newsContainer);
+    attachCardEvents(musicContainer);
+  };
+
+  btn.onclick = doSearch;
+  input.addEventListener('keydown', e => { if (e.key === 'Enter') doSearch(); });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  loadDashboard();
+  loadAds();
+  loadHomeNews();
+  loadHomeMusic();
+  initSearch();
+
+  document.getElementById('closeModal').onclick = closeVideoModal;
+  document.getElementById('videoModal').onclick = (e) => { if (e.target.id === 'videoModal') closeVideoModal(); };
+});
+</script>
+</body>
+</html>
