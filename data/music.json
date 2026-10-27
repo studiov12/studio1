@@ -7,7 +7,7 @@
     "id": 1,
     "thumbnail": "https://picsum.photos/seed/music1/400/300",
     "title": "Tere Naal",
-    "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+    "videoUrl": "https://youtube.com/shorts/bwPUmhA85sg?si=izBpkIigsvFT99YJ"
   },
   {
     "artist": "Atif Aslam",
@@ -90,133 +90,133 @@
     "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4"
   },
   {
-    "id": "11",
-    "title": "Mera Test Song",
     "artist": "Test Artist",
     "description": "Yeh sirf ek test hai",
-    "videoUrl": "",
-    "thumbnail": "",
     "duration": " 3:00",
-    "genre": "Pop"
-  },
-  {
-    "id": 1793029758160,
-    "title": "",
-    "artist": "",
-    "description": "",
-    "videoUrl": "",
+    "genre": "Pop",
+    "id": "11",
     "thumbnail": "",
-    "duration": "",
-    "genre": ""
-  },
-  {
-    "id": 1793029758375,
-    "title": "",
-    "artist": "",
-    "description": "",
-    "videoUrl": "",
-    "thumbnail": "",
-    "duration": "",
-    "genre": ""
-  },
-  {
-    "id": 1793029758586,
-    "title": "",
-    "artist": "",
-    "description": "",
-    "videoUrl": "",
-    "thumbnail": "",
-    "duration": "",
-    "genre": ""
-  },
-  {
-    "id": 1793029759074,
-    "title": "",
-    "artist": "",
-    "description": "",
-    "videoUrl": "",
-    "thumbnail": "",
-    "duration": "",
-    "genre": ""
-  },
-  {
-    "id": 1793029760183,
-    "title": "",
-    "artist": "",
-    "description": "",
-    "videoUrl": "",
-    "thumbnail": "",
-    "duration": "",
-    "genre": ""
-  },
-  {
-    "id": 1793029760351,
-    "title": "",
-    "artist": "",
-    "description": "",
-    "videoUrl": "",
-    "thumbnail": "",
-    "duration": "",
-    "genre": ""
-  },
-  {
-    "id": 1793029760521,
-    "title": "",
-    "artist": "",
-    "description": "",
-    "videoUrl": "",
-    "thumbnail": "",
-    "duration": "",
-    "genre": ""
-  },
-  {
-    "id": 1793029760739,
-    "title": "",
-    "artist": "",
-    "description": "",
-    "videoUrl": "",
-    "thumbnail": "",
-    "duration": "",
-    "genre": ""
-  },
-  {
-    "id": 1793029779100,
-    "title": "",
-    "artist": "",
-    "description": "",
-    "videoUrl": "",
-    "thumbnail": "",
-    "duration": "",
-    "genre": ""
-  },
-  {
-    "id": 1793029780172,
-    "title": "",
-    "artist": "",
-    "description": "",
-    "videoUrl": "",
-    "thumbnail": "",
-    "duration": "",
-    "genre": ""
-  },
-  {
-    "id": 1793029780349,
-    "title": "",
-    "artist": "",
-    "description": "",
-    "videoUrl": "",
-    "thumbnail": "",
-    "duration": "",
-    "genre": ""
-  },
-  {
-    "id": "17",
     "title": "Mera Test Song",
+    "videoUrl": ""
+  },
+  {
     "artist": "",
     "description": "",
-    "videoUrl": "",
-    "thumbnail": "",
     "duration": "",
-    "genre": ""
+    "genre": "",
+    "id": 1793029758160,
+    "thumbnail": "",
+    "title": "",
+    "videoUrl": ""
+  },
+  {
+    "artist": "",
+    "description": "",
+    "duration": "",
+    "genre": "",
+    "id": 1793029758375,
+    "thumbnail": "",
+    "title": "",
+    "videoUrl": ""
+  },
+  {
+    "artist": "",
+    "description": "",
+    "duration": "",
+    "genre": "",
+    "id": 1793029758586,
+    "thumbnail": "",
+    "title": "",
+    "videoUrl": ""
+  },
+  {
+    "artist": "",
+    "description": "",
+    "duration": "",
+    "genre": "",
+    "id": 1793029759074,
+    "thumbnail": "",
+    "title": "",
+    "videoUrl": ""
+  },
+  {
+    "artist": "",
+    "description": "",
+    "duration": "",
+    "genre": "",
+    "id": 1793029760183,
+    "thumbnail": "",
+    "title": "",
+    "videoUrl": ""
+  },
+  {
+    "artist": "",
+    "description": "",
+    "duration": "",
+    "genre": "",
+    "id": 1793029760351,
+    "thumbnail": "",
+    "title": "",
+    "videoUrl": ""
+  },
+  {
+    "artist": "",
+    "description": "",
+    "duration": "",
+    "genre": "",
+    "id": 1793029760521,
+    "thumbnail": "",
+    "title": "",
+    "videoUrl": ""
+  },
+  {
+    "artist": "",
+    "description": "",
+    "duration": "",
+    "genre": "",
+    "id": 1793029760739,
+    "thumbnail": "",
+    "title": "",
+    "videoUrl": ""
+  },
+  {
+    "artist": "",
+    "description": "",
+    "duration": "",
+    "genre": "",
+    "id": 1793029779100,
+    "thumbnail": "",
+    "title": "",
+    "videoUrl": ""
+  },
+  {
+    "artist": "",
+    "description": "",
+    "duration": "",
+    "genre": "",
+    "id": 1793029780172,
+    "thumbnail": "",
+    "title": "",
+    "videoUrl": ""
+  },
+  {
+    "artist": "",
+    "description": "",
+    "duration": "",
+    "genre": "",
+    "id": 1793029780349,
+    "thumbnail": "",
+    "title": "",
+    "videoUrl": ""
+  },
+  {
+    "artist": "",
+    "description": "",
+    "duration": "",
+    "genre": "",
+    "id": "17",
+    "thumbnail": "",
+    "title": "Mera Test Song",
+    "videoUrl": ""
   }
 ]
