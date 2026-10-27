@@ -10,14 +10,14 @@
     "videoUrl": "https://youtu.be/UT_8FMWKmQA"
   },
   {
-    "artist": "Atif Aslam",
-    "description": "Energetic rock song full of passion aur zabardast beat.",
+    "artist": "shikra",
+    "description": "\nTu Hi Haqeeqat Lo-fi [slow reverb] |Emraan Hashmi, Soha Ali Khan| Abbas Arzoo",
     "duration": "4:12",
     "genre": "Pop",
     "id": 2,
-    "thumbnail": "https://picsum.photos/seed/music2/400/300",
-    "title": "Rockstar",
-    "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+    "thumbnail": "https://www.google.com/imgres?q=tu%20hi%20haqeeqat&imgurl=https%3A%2F%2Fduskriplez.com%2Fwp-content%2Fuploads%2F2026%2F09%2FTu-Hi-Haqeeqat-Lyrics.jpg&imgrefurl=https%3A%2F%2Fduskriplez.com%2Ftu-hi-haqeeqat-lyrics%2F&docid=QwCPmcQms526IM&tbnid=DV9ftS1yDSNzuM&vet=12ahUKEwji8pTC59qXAxU3UqQEHd1sGwoQnPAOegUI-gQQAA..i&w=1200&h=630&hcb=2&ved=2ahUKEwji8pTC59qXAxU3UqQEHd1sGwoQnPAOegUI-gQQAA",
+    "title": " Tu Hi Haqeeqat ",
+    "videoUrl": "https://youtu.be/VN4X-KEJ3wg?si=U90rFuz-fu8cc3f6"
   },
   {
     "artist": "Atif Aslam",
@@ -134,69 +134,9 @@
     "description": "",
     "duration": "",
     "genre": "",
-    "id": 1793029760351,
-    "thumbnail": "",
-    "title": "",
-    "videoUrl": ""
-  },
-  {
-    "artist": "",
-    "description": "",
-    "duration": "",
-    "genre": "",
-    "id": 1793029760521,
-    "thumbnail": "",
-    "title": "",
-    "videoUrl": ""
-  },
-  {
-    "artist": "",
-    "description": "",
-    "duration": "",
-    "genre": "",
     "id": 1793029760739,
     "thumbnail": "",
     "title": "",
-    "videoUrl": ""
-  },
-  {
-    "artist": "",
-    "description": "",
-    "duration": "",
-    "genre": "",
-    "id": 1793029779100,
-    "thumbnail": "",
-    "title": "",
-    "videoUrl": ""
-  },
-  {
-    "artist": "",
-    "description": "",
-    "duration": "",
-    "genre": "",
-    "id": 1793029780172,
-    "thumbnail": "",
-    "title": "",
-    "videoUrl": ""
-  },
-  {
-    "artist": "",
-    "description": "",
-    "duration": "",
-    "genre": "",
-    "id": 1793029780349,
-    "thumbnail": "",
-    "title": "",
-    "videoUrl": ""
-  },
-  {
-    "artist": "",
-    "description": "",
-    "duration": "",
-    "genre": "",
-    "id": "17",
-    "thumbnail": "",
-    "title": "Mera Test Song",
     "videoUrl": ""
   }
 ]
