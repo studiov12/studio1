@@ -1,0 +1,74 @@
+{
+  "theme": {
+    "primaryColor": "#2563eb",
+    "secondaryColor": "#0ea5e9",
+    "accentColor": "#38bdf8",
+    "backgroundColor": "#0a0e1a",
+    "gradient": "linear-gradient(135deg, #2563eb 0%, #0ea5e9 50%, #38bdf8 100%)"
+  },
+  "brand": {
+    "name": "DMM & Shikra Studio",
+    "shortName": "DMM",
+    "tagline": "News · Music · Life",
+    "logoImage": "images/logo.png"
+  },
+  "owner": {
+    "name": "Owner Name",
+    "role": "Founder & CEO",
+    "image": "https://picsum.photos/seed/owner1/200/200"
+  },
+  "admin": {
+    "name": "Admin Name",
+    "role": "System Administrator",
+    "image": "https://picsum.photos/seed/admin1/200/200"
+  },
+  "leaders": [
+    {
+      "id": 1,
+      "name": "Daniyal Malik",
+      "role": "Founder & CEO",
+      "image": "https://picsum.photos/seed/owner1/200/200",
+      "badge": "👑"
+    },
+    {
+      "id": 2,
+      "name": "Muhammad Muneeb",
+      "role": "Co-Founder & Director",
+      "image": "https://picsum.photos/seed/owner2/200/200",
+      "badge": "⭐"
+    },
+    {
+      "id": 3,
+      "name": "Shikra Khan",
+      "role": "Creative Head",
+      "image": "https://picsum.photos/seed/owner3/200/200",
+      "badge": "🎨"
+    }
+  ],
+  "slider": [
+    {
+      "id": 1,
+      "image": "https://picsum.photos/seed/dmm1/1600/600",
+      "tag": "Breaking",
+      "title": "Latest Updates From Around The World",
+      "titleHighlight": "World",
+      "description": "Stay informed with real-time news coverage and exclusive reports."
+    },
+    {
+      "id": 2,
+      "image": "https://picsum.photos/seed/dmm2/1600/600",
+      "tag": "Music",
+      "title": "Music Festival 2025 Highlights",
+      "titleHighlight": "2025",
+      "description": "Experience the biggest music event of the year."
+    },
+    {
+      "id": 3,
+      "image": "https://picsum.photos/seed/dmm3/1600/600",
+      "tag": "Sports",
+      "title": "Championship Moments",
+      "titleHighlight": "Moments",
+      "description": "Watch the greatest sports highlights."
+    }
+  ]
+}
